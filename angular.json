@@ -8,10 +8,8 @@
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss"
-        },
-        "@schematics/angular:application": {
-          "strict": true
         }
+
       },
       "root": "",
       "sourceRoot": "src",
@@ -25,15 +23,43 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "inlineStyleLanguage": "scss",
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+                "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+                   "src/styles.scss",
+                   {
+                     "input": "src/main.scss",
+                     "inject": true
+                   },
+                   {
+                     "inject": true,
+                     "input": "src/assets/pink-bluegrey.css",
+                     "bundleName": "pink-bluegrey"
+                   },
+                   {
+                     "inject": true,
+                     "input": "src/assets/deeppurple-amber.css",
+                     "bundleName": "deeppurple-amber"
+                   },
+                   {
+                     "inject": true,
+                     "input": "src/assets/indigo-pink.css",
+                     "bundleName": "indigo-pink"
+                   },
+                   {
+                     "inject": true,
+                     "input": "src/assets/purple-green.css",
+                     "bundleName": "purple-green"
+                   }
             ],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -99,7 +125,31 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+                      "src/styles.scss",
+                      {
+                        "input": "src/main.scss",
+                        "inject": true
+                      },
+                      {
+                        "inject": true,
+                        "input": "src/assets/pink-bluegrey.css",
+                        "bundleName": "pink-bluegrey"
+                      },
+                      {
+                        "inject": true,
+                        "input": "src/assets/deeppurple-amber.css",
+                        "bundleName": "deeppurple-amber"
+                      },
+                      {
+                        "inject": true,
+                        "input": "src/assets/indigo-pink.css",
+                        "bundleName": "indigo-pink"
+                      },
+                      {
+                        "inject": true,
+                        "input": "src/assets/purple-green.css",
+                        "bundleName": "purple-green"
+                      }
             ],
             "scripts": []
           }

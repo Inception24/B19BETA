@@ -1,10 +1,21 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { NgModule } from "@angular/core";
+import { RouterModule, Routes } from "@angular/router";
+import { CommonModule } from "@angular/common";
+import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
+import { HomeComponent } from "./home/home.component";
 
-const routes: Routes = [];
-
+const appRoutes: Routes = [
+  { path: 'home', component: HomeComponent },
+  { path: '**', component: PageNotFoundComponent },
+];
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [
+    CommonModule,
+    RouterModule.forRoot(appRoutes, { scrollPositionRestoration: 'top', relativeLinkResolution: 'legacy' }),
+      ],
+  exports: [
+        RouterModule
+  ]
 })
+
 export class AppRoutingModule { }
